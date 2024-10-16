@@ -1,0 +1,32 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Sistema</div>
+                <a class="nav-link" routerLink="/home" routerLinkActive="active">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    Home
+                </a>
+                <div class="sb-sidenav-menu-heading">Cadastros</div>
+                <a class="nav-link collapsed" routerLink="/clientes-lista" routerLinkActive="active"
+                data-toggle="collapse" data-target="#collapseLayouts" 
+                aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                    Clientes
+                </a>
+                <a class="nav-link collapsed" routerLink="/servico-prestado-lista" routerLinkActive="active"
+                data-toggle="collapse" data-target="#collapseLayouts" 
+                aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-hands-helping"></i></div>
+                    Serviços Prestados
+                </a>
+            </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logado como:</div>
+            Start Bootstrap
+        </div>
+    </nav>
+</div>

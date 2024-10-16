@@ -1,0 +1,70 @@
+<h1 class="mt-4 text-center">Listagem de Clientes</h1><br>
+<div class="container">
+
+    <div class="row mb-4">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success" (click)="novoCadastro()">
+                <i class="fa fa-user-plus"></i> Novo
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="table-responsive">
+                <table class="table table-hover table-borderless custom-table">
+                    <thead class="thead-dark text-center">
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th class="text-nowrap">CPF</th>
+                            <th>Data de Cadastro</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let cliente of clientes">
+                            <td class="text-center">{{ cliente.id }}</td>
+                            <td class="text-center">{{ cliente.nome }}</td>
+                            <td class="text-center">{{ cliente.cpf }}</td>
+                            <td class="text-center">{{ cliente.dataCadastro }}</td>
+                            <td class="text-center">
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-primary btn-sm me-2" title="Editar" 
+                                    routerLink="/clientes-form/{{ cliente.id }}">
+                                        <i class="fa fa-user-edit"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-sm ml-1" title="Excluir" (click)="preparaDelecao(cliente)"
+                                    data-toggle="modal" data-target="#modalDelecao">
+                                        <i class="fa fa-user-times"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDelecao" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmação de Exclusão</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p *ngIf="clienteSelecionado">
+                        Tem certeza que deseja excluir o(a) cliente <strong>{{ clienteSelecionado.nome }}</strong>?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" (click)="deletarCliente()" data-dismiss="modal">Sim</button>
+                    <button class="btn btn-secondary" data-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

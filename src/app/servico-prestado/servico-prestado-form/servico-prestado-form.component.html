@@ -1,0 +1,63 @@
+<h1 class="mt-4 text-center">Cadastro de Serviço Prestado</h1><br>
+
+<div class="container">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="cliente">Cliente: <span class="text-danger">*</span></label>
+                    <select class="form-control" required 
+                        [(ngModel)]="servico.idCliente" name="idCliente" [ngModelOptions]="{standalone: true}">
+                        <option  [ngValue]="null">Selecione...</option>
+                        <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">{{ cliente.nome }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="descricao">Descrição: <span class="text-danger">*</span></label>
+                    <input type="text" id="descricao" class="form-control" required
+                        [(ngModel)]="servico.descricao" name="descricao" placeholder="Descrição do serviço"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="data">Data: <span class="text-danger">*</span></label>
+                    <input type="date" id="data" class="form-control" required
+                        [(ngModel)]="servico.data" name="data"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="preco">Preço: <span class="text-danger">*</span></label>
+                    <input type="text" id="inputPreco" class="form-control" required
+                        [(ngModel)]="servico.preco" name="preco" placeholder="Digite o preço do serviço"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 text-center">
+                <button type="submit" class="btn btn-success me-2">
+                    <i class="fa fa-save me-2"></i> Salvar
+                </button>
+
+                <button type="button" class="btn btn-secondary ml-4" routerLink="/servico-prestado-lista">
+                    <i class="fa fa-arrow-alt-circle-left me-2"></i> Voltar
+                </button>
+            </div>
+        </div>
+
+    </form>
+    <br>
+</div>

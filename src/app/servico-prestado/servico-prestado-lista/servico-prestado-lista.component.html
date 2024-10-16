@@ -1,0 +1,62 @@
+<h1 class="mt-4 text-center">Consulta de Serviço Prestado</h1><br>
+
+<div class="container">
+
+    <div class="row mb-4">
+        <div class="col-md-2">
+            <button type="button" class="btn btn-success" routerLink="/servico-prestado-form">
+                <i class="fa fa-plus-circle"></i> Novo
+            </button>
+        </div>
+    </div>
+
+    <form #consultarForm="ngForm" (submit)="consultar()">
+        <div class="row justify-content-center g-3">
+            <div class="col-md-6 col-sm-12">
+                <label for="inputNome" class="form-label">Nome do(a) cliente: </label>
+                <input class="form-control" type="text" id="inputNome" name="nome" 
+                [(ngModel)]="nome" placeholder="Digite o nome do cliente">
+            </div>
+        
+            <div class="col-md-4 col-sm-12 mt-md-0 mt-2">
+                <label for="inputMes" class="form-label">Mês: </label>
+                <select id="inputMes" [(ngModel)]="mes" class="form-control" name="mes">
+                    <option value="">Selecione...</option>
+                    <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+                </select>
+            </div>
+        
+            <div class="col-md-2 col-sm-12 mt-md-0 mt-2 align-self-end">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fa fa-search me-2"></i> Consultar
+                </button>
+            </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-hover table-borderless custom-table">
+                        <thead class="thead-dark text-center">
+                            <tr>
+                            <th>Cliente</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let servico of lista">
+                            <td class="text-center">{{ servico.cliente.nome }}</td>
+                            <td class="text-center">{{ servico.descricao }}</td>
+                            <td class="text-center">{{ servico.valor | currency: 'BRL' }}</td>
+                            <td class="text-center">{{ servico.data }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </form>
+</div>
