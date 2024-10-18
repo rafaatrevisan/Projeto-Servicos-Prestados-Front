@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="login-container" id="layoutAuthenticator">
+        <div class="login-box"id="layoutAuthenticator_content">
+            <h1>{{ cadastrando ? 'Cadastro' : 'Login' }}</h1>
+            <form #loginForm="ngForm" (submit)="onSubmit();">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Digite seu login"
+                     required [(ngModel)]="username">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Digite sua senha" required
+                    [(ngModel)]="password">
+                </div><br>
+                <button type="submit" class="login-btn" *ngIf="!cadastrando">Entrar</button>
+                <button type="button" class="login-btn" *ngIf="cadastrando">Cadastrar</button>
+            </form>
+            <p class="register-link" *ngIf="!cadastrando">Ainda não tem uma conta? 
+                <a href="#" (click)="preparaCadastro($event)">Cadastre-se</a>
+            </p>
+            <p class="register-link" *ngIf="cadastrando"> 
+                <a href="#" (click)="cancelaCadastro($event)">Cancelar</a>
+            </p>
+        </div>
+    </div>
+</div>
