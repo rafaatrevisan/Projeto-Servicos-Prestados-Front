@@ -1,27 +1,14 @@
 # ClientesApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+Esta é uma aplicação front-end desenvolvida com Angular, no qual também utiliza jQuery e Bootstrap. O projeto tem como objetivo gerenciar clientes e os serviços prestados a eles. Nele, é possível cadastrar, visualizar e gerenciar dados dos clientes, bem como cadastrar os serviços realizados para os mesmos. 
 
-## Development server
+O layout do sistema foi desenvolvido a partir de um template que inclui uma barra de navegação (navbar) e uma barra lateral (sidebar), permitindo uma organização eficiente dos módulos e interfaces que foram desenvolvidas.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Principais Funcionalidades:
+- Cadastro e gerenciamento de clientes.
+- Controle e registro de serviços prestados.
+- Interface organizada com navegação fácil entre os módulos.
 
-## Code scaffolding
+## Servidor de desenvolvimento
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Execute `ng serve` para iniciar o servidor de desenvolvimento e acesse `http://localhost:4200/`. A aplicação recarrega automaticamente quando arquivos de origem são alterados.
