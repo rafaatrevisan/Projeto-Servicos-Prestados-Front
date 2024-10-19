@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent  {
 
-  username: string;
+  name: string;
+  email: string;
   password: string;
   loginError: boolean;
   cadastrando: boolean;

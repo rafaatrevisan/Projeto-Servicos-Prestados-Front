@@ -4,8 +4,12 @@
             <h1>{{ cadastrando ? 'Cadastro' : 'Login' }}</h1>
             <form #loginForm="ngForm" (submit)="onSubmit();">
                 <div class="input-group">
-                    <input type="text" name="username" placeholder="Digite seu login"
-                     required [(ngModel)]="username">
+                    <input type="text" name="name" placeholder="Digite seu nome"
+                     required [(ngModel)]="name" *ngIf="cadastrando">
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Digite seu e-mail"
+                     required [(ngModel)]="email">
                 </div>
                 <div class="input-group">
                     <input type="password" name="password" placeholder="Digite sua senha" required
