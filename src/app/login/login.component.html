@@ -1,29 +1,42 @@
-<div class="container">
-    <div class="login-container" id="layoutAuthenticator">
-        <div class="login-box"id="layoutAuthenticator_content">
-            <h1>{{ cadastrando ? 'Cadastro' : 'Login' }}</h1>
-            <form #loginForm="ngForm" (submit)="onSubmit();">
-                <div class="input-group">
-                    <input type="text" name="name" placeholder="Digite seu nome"
-                     required [(ngModel)]="name" *ngIf="cadastrando">
-                </div>
-                <div class="input-group">
-                    <input type="email" name="email" placeholder="Digite seu e-mail"
-                     required [(ngModel)]="email">
-                </div>
-                <div class="input-group">
-                    <input type="password" name="password" placeholder="Digite sua senha" required
-                    [(ngModel)]="password">
-                </div><br>
-                <button type="submit" class="login-btn" *ngIf="!cadastrando">Entrar</button>
-                <button type="button" class="login-btn" *ngIf="cadastrando">Cadastrar</button>
-            </form>
-            <p class="register-link" *ngIf="!cadastrando">Ainda não tem uma conta? 
-                <a href="#" (click)="preparaCadastro($event)">Cadastre-se</a>
-            </p>
-            <p class="register-link" *ngIf="cadastrando"> 
-                <a href="#" (click)="cancelaCadastro($event)">Cancelar</a>
-            </p>
+<div class="bg-color">
+    <div class="container">
+        <div class="login-container" id="layoutAuthenticator">
+            <div class="login-box"id="layoutAuthenticator_content">
+                <h1>{{ cadastrando ? 'Cadastro' : 'Login' }}</h1>
+                <form #loginForm="ngForm" (submit)="onSubmit();">
+
+                    <div class="input-group">
+                        <input type="text" name="nome" placeholder="Digite seu nome"
+                        required [(ngModel)]="nome" *ngIf="cadastrando">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Digite seu e-mail"
+                        required [(ngModel)]="email" autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <input type="password" name="senha" placeholder="Digite sua senha" required
+                        [(ngModel)]="senha">
+                    </div><br>
+
+                    <button type="submit" class="login-btn" *ngIf="!cadastrando">
+                        Entrar
+                    </button>
+
+                    <button type="button" class="login-btn" 
+                    *ngIf="cadastrando" (click)="cadastrar()">
+                    Cadastrar
+                    </button>
+
+                </form>
+                <p class="register-link" *ngIf="!cadastrando">Ainda não tem uma conta? 
+                    <a href="#" (click)="preparaCadastro($event)">Cadastre-se</a>
+                </p>
+                <p class="register-link" *ngIf="cadastrando"> 
+                    <a href="#" (click)="cancelaCadastro($event)">Cancelar</a>
+                </p>
+            </div>
         </div>
     </div>
 </div>
