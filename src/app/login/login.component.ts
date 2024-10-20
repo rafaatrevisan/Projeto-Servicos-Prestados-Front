@@ -22,7 +22,21 @@ export class LoginComponent  {
   ) { }
 
   onSubmit(){
-    this.router.navigate(['/home'])
+    this.authService
+           .tentarLogar(this.email, this.senha)
+           .subscribe(response => {
+              const access_token = JSON.stringify(response)
+              localStorage.setItem('access_token', access_token)
+              this.router.navigate(['/home'])
+           }, errorResponse => {
+            Swal.fire({
+              icon: "error",
+              title: "Erro ao tentar efetuar login!",
+              text: "E-mail e/ou senha incorreto(s).",
+              showConfirmButton: true,
+              confirmButtonColor: "#f27474"
+            });
+           })
   }
 
   preparaCadastro(event){
